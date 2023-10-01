@@ -89,7 +89,8 @@ void ReadAnalogStatuses() {
   for (int i = 0; i < TOTAL_ANALOG_PINS; i++) {
     analogPins[i] = analogRead(i);   
   }  
- updateadcBuffAndSave();   
+ 
+updateadcBuffAndSave();   
 
 initializeADCs(); // Здесь вызываем функцию инициализации переменных adcX  
   
@@ -125,7 +126,8 @@ void sendCanMessagesTask() {
 
     addToCanBuffer(canMsg2); 
   
-  sendBufferedCanMessages();
+    sendBufferedCanMessages();
+
 }
 
 void adcsendTask() { 
@@ -167,8 +169,6 @@ void setup() {
   pinMode(A5, INPUT_PULLUP);
   pinMode(A6, INPUT);
   pinMode(A7, INPUT);
-
-
 
 }
 
